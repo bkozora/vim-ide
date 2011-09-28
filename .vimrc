@@ -11,6 +11,14 @@ if has("gui_macvim")
     set guifont=Menlo:h15
 endif
 
+
+" Add Pathogen to easily manage runtime paths
+" https://github.com/tpope/vim-pathogen
+
+call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
+
+
 " Enable loading filetype and indentation plugins
 filetype plugin on
 filetype indent on
@@ -19,15 +27,25 @@ filetype indent on
 syntax on
 
 " default color scheme (based on wombat)
-colorscheme foursee
+colorscheme asmdev
 
 " make sure that ZF standards for maximum line height are honoured
-set colorcolumn=80,120
+" set colorcolumn=80,120
 
 " enable new 7.3 persistent undo feature
-set undofile
-set undodir=~/.vim/undo
+" set undofile
+" set undodir=~/vim-ide/undo
 
+"copy the current visual selection to ~/.vbuf 
+vmap <leader>y :w! ~/.vbuf<cr> 
+
+"copy the current line to the buffer file if no visual selection  
+nmap <leader>y :.w! ~/.vbuf<cr>  
+
+"paste the contents of the buffer file  
+nmap <leader>p :r ~/.vbuf<cr></cr></leader></cr></leader></cr></leader>  
+    
+    
 " enable 256 colors in screen
 set t_Co=256
 
@@ -103,6 +121,9 @@ set ruler
 
 " Show line numbers - could be toggled on/off on-fly by pressing F6
 set number
+
+" Enable word wrap
+set wrap
 
 " Scroll when cursor gets within 10 characters of top/bottom edge
 set scrolloff=5
@@ -277,10 +298,12 @@ imap <F2> <ESC>:!screen -x cli<CR>
 vmap <F2> <ESC><ESC>:!screen -x cli<CR>
 
 " F3 search lines with FuzzyFinder
-map <F3> :FufLine<CR>
-imap <F3> <ESC>:FufLine<CR>
-vmap <F3> <ESC><ESC>:FufLine<CR>
 
+if has("gui_macvim")
+    map <F3> :FufLine<CR>
+    imap <F3> <ESC>:FufLine<CR>
+    vmap <F3> <ESC><ESC>:FufLine<CR>
+endif
 
 au FileType php noremap <C-F5> <ESC>:!phpunit %<CR>
 au FileType php noremap <F5> <ESC>:!php -f %<CR>
@@ -364,4 +387,5 @@ vnoremap < <gv
 vnoremap > >gv 
 " turn off search highlighting
 nmap <silent> <Leader>n :silent :nohlsearch<CR>
+
 
