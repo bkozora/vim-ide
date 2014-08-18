@@ -8,6 +8,14 @@ autocmd!
 " Load pathogen
 execute pathogen#infect()
 
+
+" Add Pathogen to easily manage runtime paths
+" https://github.com/tpope/vim-pathogen
+
+call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
+
+
 " Enable loading filetype and indentation plugins
 filetype plugin indent on
 
@@ -31,14 +39,24 @@ set imsearch=0
 highlight lCursor guifg=NONE guibg=#cae682
 
 " make sure that ZF standards for maximum line height are honoured
-set colorcolumn=80,120
+" set colorcolumn=80,120
 
 " Switch between the last two files
 nnoremap <leader><leader> <C-^>
 
 " enable new 7.3 persistent undo feature
-"set undofile
-"set undodir=~/.vim/undo
+" set undofile
+" set undodir=~/vim-ide/undo
+
+"copy the current visual selection to ~/.vbuf
+vmap <leader>y :w! ~/.vbuf<cr>
+
+"copy the current line to the buffer file if no visual selection
+nmap <leader>y :.w! ~/.vbuf<cr>
+
+"paste the contents of the buffer file
+nmap <leader>p :r ~/.vbuf<cr></cr></leader></cr></leader></cr></leader>
+
 
 " enable 256 colors in screen
 set t_Co=256
@@ -115,6 +133,9 @@ set ruler
 
 " Show line numbers - could be toggled on/off on-fly by pressing F6
 set number
+
+" Enable word wrap
+set wrap
 
 " Scroll when cursor gets within 10 characters of top/bottom edge
 set scrolloff=999
@@ -356,10 +377,12 @@ imap <F2> <ESC>:!screen -x cli<CR>
 vmap <F2> <ESC><ESC>:!screen -x cli<CR>
 
 " F3 search lines with FuzzyFinder
-map <F3> :FufLine<CR>
-imap <F3> <ESC>:FufLine<CR>
-vmap <F3> <ESC><ESC>:FufLine<CR>
 
+if has("gui_macvim")
+    map <F3> :FufLine<CR>
+    imap <F3> <ESC>:FufLine<CR>
+    vmap <F3> <ESC><ESC>:FufLine<CR>
+endif
 
 au FileType php noremap <Leader>k <ESC>:!phpunit --configuration tests/phpunit.xml --group cur %<CR>
 au FileType php noremap <Leader>j <ESC>:!phpunit --configuration tests/phpunit.xml %<CR>
@@ -460,6 +483,7 @@ vnoremap > >gv
 " turn off search highlighting
 nmap <silent> <Leader>n :silent :nohlsearch<CR>
 
+<<<<<<< HEAD
 " Make sure that CTRL-A (used by gnu screen) is redefined
 noremap <Leader>inc <C-A>
 nmap <Leader>sc :set scrolloff=1<CR>

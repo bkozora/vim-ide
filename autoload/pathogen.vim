@@ -1,12 +1,21 @@
 " pathogen.vim - path option manipulation
 " Maintainer:   Tim Pope <http://tpo.pe/>
+<<<<<<< HEAD
 " Version:      2.2
+=======
+" Version:      2.0
+>>>>>>> f947f301f415a17c5255dcba30772318f0b42f87
 
 " Install in ~/.vim/autoload (or ~\vimfiles\autoload).
 "
 " For management of individually installed plugins in ~/.vim/bundle (or
+<<<<<<< HEAD
 " ~\vimfiles\bundle), adding `call pathogen#infect()` to the top of your
 " .vimrc is the only other setup necessary.
+=======
+" ~\vimfiles\bundle), adding `call pathogen#infect()` to your .vimrc
+" prior to `fileype plugin indent on` is the only other setup necessary.
+>>>>>>> f947f301f415a17c5255dcba30772318f0b42f87
 "
 " The API is documented inline below.  For maximum ease of reading,
 " :set foldmethod=marker
@@ -16,6 +25,7 @@ if exists("g:loaded_pathogen") || &cp
 endif
 let g:loaded_pathogen = 1
 
+<<<<<<< HEAD
 function! s:warn(msg)
   if &verbose
     echohl WarningMsg
@@ -45,6 +55,20 @@ function! pathogen#infect(...) abort " {{{1
   endfor
   call pathogen#cycle_filetype()
   return ''
+=======
+" Point of entry for basic default usage.  Give a directory name to invoke
+" pathogen#runtime_append_all_bundles() (defaults to "bundle"), or a full path
+" to invoke pathogen#runtime_prepend_subdirectories().  Afterwards,
+" pathogen#cycle_filetype() is invoked.
+function! pathogen#infect(...) abort " {{{1
+  let source_path = a:0 ? a:1 : 'bundle'
+  if source_path =~# '[\\/]'
+    call pathogen#runtime_prepend_subdirectories(source_path)
+  else
+    call pathogen#runtime_append_all_bundles(source_path)
+  endif
+  call pathogen#cycle_filetype()
+>>>>>>> f947f301f415a17c5255dcba30772318f0b42f87
 endfunction " }}}1
 
 " Split a path into a list.
@@ -128,9 +152,14 @@ function! pathogen#cycle_filetype() " {{{1
   endif
 endfunction " }}}1
 
+<<<<<<< HEAD
 " Check if a bundle is disabled.  A bundle is considered disabled if it ends
 " in a tilde or its basename or full name is included in the list
 " g:pathogen_disabled.
+=======
+" Checks if a bundle is 'disabled'. A bundle is considered 'disabled' if
+" its 'basename()' is included in g:pathogen_disabled[]' or ends in a tilde.
+>>>>>>> f947f301f415a17c5255dcba30772318f0b42f87
 function! pathogen#is_disabled(path) " {{{1
   if a:path =~# '\~$'
     return 1
@@ -138,6 +167,7 @@ function! pathogen#is_disabled(path) " {{{1
     return 0
   endif
   let sep = pathogen#separator()
+<<<<<<< HEAD
   let blacklist = g:pathogen_disabled
   return index(blacklist, strpart(a:path, strridx(a:path, sep)+1)) != -1 && index(blacklist, a:path) != 1
 endfunction "}}}1
@@ -180,6 +210,31 @@ endfunction " }}}1
 function! pathogen#incubate(...) abort " {{{1
   let sep = pathogen#separator()
   let name = a:0 ? a:1 : 'bundle/{}'
+=======
+  return index(g:pathogen_disabled, strpart(a:path, strridx(a:path, sep)+1)) != -1
+endfunction "}}}1
+
+" Prepend all subdirectories of path to the rtp, and append all 'after'
+" directories in those subdirectories.
+function! pathogen#runtime_prepend_subdirectories(path) " {{{1
+  let sep    = pathogen#separator()
+  let before = filter(pathogen#glob_directories(a:path.sep."*"), '!pathogen#is_disabled(v:val)')
+  let after  = filter(pathogen#glob_directories(a:path.sep."*".sep."after"), '!pathogen#is_disabled(v:val[0:-7])')
+  let rtp = pathogen#split(&rtp)
+  let path = expand(a:path)
+  call filter(rtp,'v:val[0:strlen(path)-1] !=# path')
+  let &rtp = pathogen#join(pathogen#uniq(before + rtp + after))
+  return &rtp
+endfunction " }}}1
+
+" For each directory in rtp, check for a subdirectory named dir.  If it
+" exists, add all subdirectories of that subdirectory to the rtp, immediately
+" after the original directory.  If no argument is given, 'bundle' is used.
+" Repeated calls with the same arguments are ignored.
+function! pathogen#runtime_append_all_bundles(...) " {{{1
+  let sep = pathogen#separator()
+  let name = a:0 ? a:1 : 'bundle'
+>>>>>>> f947f301f415a17c5255dcba30772318f0b42f87
   if "\n".s:done_bundles =~# "\\M\n".name."\n"
     return ""
   endif
@@ -187,6 +242,7 @@ function! pathogen#incubate(...) abort " {{{1
   let list = []
   for dir in pathogen#split(&rtp)
     if dir =~# '\<after$'
+<<<<<<< HEAD
       if name =~# '{}$'
         let list +=  filter(pathogen#glob_directories(substitute(dir,'after$',name[0:-3],'').'*[^~]'.sep.'after'), '!pathogen#is_disabled(v:val[0:-7])') + [dir]
       else
@@ -198,10 +254,16 @@ function! pathogen#incubate(...) abort " {{{1
       else
         let list += [dir . sep . name, dir]
       endif
+=======
+      let list +=  filter(pathogen#glob_directories(substitute(dir,'after$',name,'').sep.'*[^~]'.sep.'after'), '!pathogen#is_disabled(v:val[0:-7])') + [dir]
+    else
+      let list +=  [dir] + filter(pathogen#glob_directories(dir.sep.name.sep.'*[^~]'), '!pathogen#is_disabled(v:val)')
+>>>>>>> f947f301f415a17c5255dcba30772318f0b42f87
     endif
   endfor
   let &rtp = pathogen#join(pathogen#uniq(list))
   return 1
+<<<<<<< HEAD
 endfunction " }}}1
 
 " Deprecated alias for pathogen#incubate().
@@ -212,12 +274,15 @@ function! pathogen#runtime_append_all_bundles(...) abort " {{{1
     call s:warn('Change pathogen#runtime_append_all_bundles() to pathogen#incubate()')
   endif
   return call('pathogen#incubate', map(copy(a:000),'v:val . "/{}"'))
+=======
+>>>>>>> f947f301f415a17c5255dcba30772318f0b42f87
 endfunction
 
 let s:done_bundles = ''
 " }}}1
 
 " Invoke :helptags on all non-$VIM doc directories in runtimepath.
+<<<<<<< HEAD
 function! pathogen#helptags() abort " {{{1
   let sep = pathogen#separator()
   for glob in pathogen#split(&rtp)
@@ -226,11 +291,20 @@ function! pathogen#helptags() abort " {{{1
         helptags `=dir.'/doc'`
       endif
     endfor
+=======
+function! pathogen#helptags() " {{{1
+  let sep = pathogen#separator()
+  for dir in pathogen#split(&rtp)
+    if (dir.sep)[0 : strlen($VIMRUNTIME)] !=# $VIMRUNTIME.sep && filewritable(dir.sep.'doc') == 2 && !empty(glob(dir.sep.'doc'.sep.'*')) && (!filereadable(dir.sep.'doc'.sep.'tags') || filewritable(dir.sep.'doc'.sep.'tags'))
+      helptags `=dir.'/doc'`
+    endif
+>>>>>>> f947f301f415a17c5255dcba30772318f0b42f87
   endfor
 endfunction " }}}1
 
 command! -bar Helptags :call pathogen#helptags()
 
+<<<<<<< HEAD
 " Execute the given command.  This is basically a backdoor for --remote-expr.
 function! pathogen#execute(...) abort " {{{1
   for command in a:000
@@ -267,11 +341,20 @@ endif
 
 let s:vopen_warning = 0
 
+=======
+" Like findfile(), but hardcoded to use the runtimepath.
+function! pathogen#runtime_findfile(file,count) "{{{1
+  let rtp = pathogen#join(1,pathogen#split(&rtp))
+  return fnamemodify(findfile(a:file,rtp,a:count),':p')
+endfunction " }}}1
+
+>>>>>>> f947f301f415a17c5255dcba30772318f0b42f87
 function! s:find(count,cmd,file,lcd) " {{{1
   let rtp = pathogen#join(1,pathogen#split(&runtimepath))
   let file = pathogen#runtime_findfile(a:file,a:count)
   if file ==# ''
     return "echoerr 'E345: Can''t find file \"".a:file."\" in runtimepath'"
+<<<<<<< HEAD
   endif
   if !s:vopen_warning
     let s:vopen_warning = 1
@@ -285,6 +368,14 @@ function! s:find(count,cmd,file,lcd) " {{{1
     return a:cmd.' '.pathogen#fnameescape(a:file) . warning
   else
     return a:cmd.' '.pathogen#fnameescape(file) . warning
+=======
+  elseif a:lcd
+    let path = file[0:-strlen(a:file)-2]
+    execute 'lcd `=path`'
+    return a:cmd.' '.fnameescape(a:file)
+  else
+    return a:cmd.' '.fnameescape(file)
+>>>>>>> f947f301f415a17c5255dcba30772318f0b42f87
   endif
 endfunction " }}}1
 
@@ -302,6 +393,7 @@ function! s:Findcomplete(A,L,P) " {{{1
   else
     let request = a:A
   endif
+<<<<<<< HEAD
   let pattern = substitute(request,'/\|\'.sep,'*'.sep,'g').'*'
   let found = {}
   for path in pathogen#split(&runtimepath)
@@ -309,6 +401,14 @@ function! s:Findcomplete(A,L,P) " {{{1
     let matches = split(glob(path.sep.pattern),"\n")
     call map(matches,'isdirectory(v:val) ? v:val.sep : v:val')
     call map(matches,'expand(v:val, ":p")[strlen(path)+1:-1]')
+=======
+  let pattern = substitute(request,'\'.sep,'*'.sep,'g').'*'
+  let found = {}
+  for path in pathogen#split(&runtimepath)
+    let matches = split(glob(path.sep.pattern),"\n")
+    call map(matches,'isdirectory(v:val) ? v:val.sep : v:val')
+    call map(matches,'v:val[strlen(path)+1:-1]')
+>>>>>>> f947f301f415a17c5255dcba30772318f0b42f87
     for match in matches
       let found[match] = 1
     endfor
@@ -316,6 +416,7 @@ function! s:Findcomplete(A,L,P) " {{{1
   return sort(keys(found))
 endfunction " }}}1
 
+<<<<<<< HEAD
 command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete Ve       :execute s:find(<count>,'edit<bang>',<q-args>,0)
 command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete Vedit    :execute s:find(<count>,'edit<bang>',<q-args>,0)
 command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete Vopen    :execute s:find(<count>,'edit<bang>',<q-args>,1)
@@ -326,3 +427,15 @@ command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete Vpedit
 command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete Vread    :execute s:find(<count>,'read',<q-args>,<bang>1)
 
 " vim:set et sw=2:
+=======
+command! -bar -bang -count=1 -nargs=1 -complete=customlist,s:Findcomplete Ve       :execute s:find(<count>,'edit<bang>',<q-args>,0)
+command! -bar -bang -count=1 -nargs=1 -complete=customlist,s:Findcomplete Vedit    :execute s:find(<count>,'edit<bang>',<q-args>,0)
+command! -bar -bang -count=1 -nargs=1 -complete=customlist,s:Findcomplete Vopen    :execute s:find(<count>,'edit<bang>',<q-args>,1)
+command! -bar -bang -count=1 -nargs=1 -complete=customlist,s:Findcomplete Vsplit   :execute s:find(<count>,'split',<q-args>,<bang>1)
+command! -bar -bang -count=1 -nargs=1 -complete=customlist,s:Findcomplete Vvsplit  :execute s:find(<count>,'vsplit',<q-args>,<bang>1)
+command! -bar -bang -count=1 -nargs=1 -complete=customlist,s:Findcomplete Vtabedit :execute s:find(<count>,'tabedit',<q-args>,<bang>1)
+command! -bar -bang -count=1 -nargs=1 -complete=customlist,s:Findcomplete Vpedit   :execute s:find(<count>,'pedit',<q-args>,<bang>1)
+command! -bar -bang -count=1 -nargs=1 -complete=customlist,s:Findcomplete Vread    :execute s:find(<count>,'read',<q-args>,<bang>1)
+
+" vim:set ft=vim ts=8 sw=2 sts=2:
+>>>>>>> f947f301f415a17c5255dcba30772318f0b42f87
