@@ -21,7 +21,7 @@ if has("gui_macvim")
     colorscheme solarized
 else
     set background=dark
-    colorscheme foursee
+    colorscheme neon
 endif
 
 " make sure that cyrillic input is supported
