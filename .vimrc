@@ -37,8 +37,8 @@ set colorcolumn=80,120
 nnoremap <leader><leader> <C-^>
 
 " enable new 7.3 persistent undo feature
-"set undofile
-"set undodir=~/.vim/undo
+set undofile
+set undodir=~/.vim/undo
 
 " enable 256 colors in screen
 set t_Co=256
@@ -144,7 +144,7 @@ set expandtab
 set textwidth=120
 
 " do not wrap lines by default
-set nowrap
+set wrap "nowrap
 
 " Write swap file to disk after every 50 characters
 set updatecount=50
@@ -351,9 +351,9 @@ nmap <Leader>v :vsp $MYVIMRC<CR>
 nmap <Leader>todo :vsp ~/projects.todo.txt<CR>
 
 " F2 allow to utilize screen
-map <F2> :!screen -x cli<CR>
-imap <F2> <ESC>:!screen -x cli<CR>
-vmap <F2> <ESC><ESC>:!screen -x cli<CR>
+"map <F2> :!screen -x cli<CR>
+"imap <F2> <ESC>:!screen -x cli<CR>
+"vmap <F2> <ESC><ESC>:!screen -x cli<CR>
 
 " F3 search lines with FuzzyFinder
 map <F3> :FufLine<CR>
