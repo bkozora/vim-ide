@@ -2,6 +2,28 @@
 " MAIN CUSTOMIZATION FILE
 "
 
+" Removed Vundle "
+"
+"  set nocompatible              " be iMproved, required
+"  filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+"   set rtp+=~/.vim/bundle/Vundle.vim
+"   call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
+"
+" let Vundle manage Vundle, required
+"   Plugin 'gmarik/Vundle.vim'
+"
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+
+" All of your Plugins must be added before the following line
+"   call vundle#end()            " required
+"   filetype plugin indent on    " required
+
 " Purge previous auto commands (in case vimrc is run twice)
 autocmd!
 
@@ -39,14 +61,61 @@ nnoremap <leader><leader> <C-^>
 " enable new 7.3 persistent undo feature
 set undofile
 set undodir=~/.vim/undo
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
+
+" Map undotree
+nnoremap <Leader>t :UndotreeToggle<cr>
+
+" Map gundo tree view of undos
+
+" Layout, undotree right, diff bottom
+if !exists('g:undotree_WindowLayout')
+    let g:undotree_WindowLayout = 4
+endif
+
+
+" undotree window width
+if !exists('g:undotree_SplitWidth')
+    let g:undotree_SplitWidth = 40
+endif
+
+" diff window height
+if !exists('g:undotree_DiffpanelHeight')
+    let g:undotree_DiffpanelHeight = 10
+endif
+
+" Highlight changed text
+if !exists('g:undotree_HighlightChangedText')
+    let g:undotree_HighlightChangedText = 0
+endif
+
+" Map gundo tree view of undos
+" nnoremap <Leader>u :GundoToggle<CR>
+
+" Disable gundo preview screen (it's sllllooooowwwwww)...
+" let g:gundo_tree_statusline
 
 " enable 256 colors in screen
 set t_Co=256
 
 " make sure that mouse is enabled
+
 set mouse=a
 
-"
+"nnoremap <F1> :call ToggleMouse()
+function! ToggleMouse()
+    if &mouse == 'a'
+        set mouse=
+        set nonumber
+        echo "Mouse usage disabled"
+    else
+        set mouse=a
+        set number
+        echo "Mouse usage enabled"
+    endif
+endfunction
+
 " GLOBAL SETTINGS
 "
 
@@ -117,7 +186,7 @@ set ruler
 set number
 
 " Scroll when cursor gets within 10 characters of top/bottom edge
-set scrolloff=999
+set scrolloff=10 "999
 
 " Round indent to multiple of 'shiftwidth' for > and < commands
 set shiftround
@@ -221,10 +290,13 @@ let NERDTreeWinSize = 35
 " Make sure that when NT root is changed, Vim's pwd is also updated
 let NERDTreeChDirMode = 2
 let NERDTreeShowLineNumbers = 1
-let NERDTreeAutoCenter = 1
+let NERDTreeAutoCenter = 0
 nmap <Leader>o :NERDTreeToggle<CR>
 " Open NERDTree on startup, when no file has been specified
 autocmd VimEnter * if !argc() | NERDTree | endif
+
+" Close vim without prompting if NERDTree is the only window left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Project
 let g:proj_flags="FisLt"
@@ -246,11 +318,11 @@ let g:gist_post_private = 1
 let g:gist_show_privates = 1
 
 " UltiSnips
-"let g:UltiSnipsEditSplit="vertical"
-"let g:UltiSnipsSnippetsDir="~/.vim/mydata/snippets"
-"let g:UltiSnipsExpandTrigger="<c-tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-n>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir="~/.vim/mydata/snippets"
+let g:UltiSnipsExpandTrigger="<c-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 "
 " Folding
@@ -285,9 +357,9 @@ au FileType vim,php,c,python,html,twig,yml,xml,js,md au BufWritePre *.* :%s/\s\+
 
 
 "run file with PHP CLI (CTRL-M)
-au FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
+au FileType php noremap <C-M> :w!<CR>:!php %<CR>
 " " PHP parser check (CTRL-L)
-au FileType php noremap <C-L> :!$HOME/bin/php -l %<CR>
+au FileType php noremap <C-L> :!php -l %<CR>
 au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python set foldmethod=indent
 au FileType python set foldnestmax=2
@@ -363,7 +435,7 @@ vmap <F3> <ESC><ESC>:FufLine<CR>
 
 au FileType php noremap <Leader>k <ESC>:!phpunit --configuration tests/phpunit.xml --group cur %<CR>
 au FileType php noremap <Leader>j <ESC>:!phpunit --configuration tests/phpunit.xml %<CR>
-"au FileType php noremap <F5> <ESC>:!php -f %<CR>
+au FileType php noremap <F5> <ESC>:!php -f %<CR>
 au FileType python noremap <F5> <ESC>:!python %<CR>
 au FileType sql noremap <F5> <ESC>:!mysql < %<CR>
 au FileType javascript noremap <F5> <ESC>:!js -strict -w -f %<CR>
@@ -447,7 +519,7 @@ nmap ,f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 " use <F6> to toggle line numbers
 nmap <silent> <F6> :set number!<CR>
 " page down with <Space>
-" nmap <Space> <PageDown>
+nmap <Space> <PageDown>
 " open filename under cursor in a new window (use current file's working
 " directory)
 nmap gf :new %:p:h/<cfile><CR>
@@ -480,13 +552,33 @@ nmap <F10> :Cstep<CR>
 nmap <Leader>pep :!pep8 %<CR>
 nmap <Leader>x :TagbarToggle<CR>
 
-au FileType tex noremap <Leader>cur <ESC>:call LatexMakeCurrentFile()<CR><CR>
-func! LatexMakeCurrentFile()
-    exec ":silent !rm /home/victor/projects/zurich/latex/current.tex"
-    exec "!ln -s `pwd`/% /home/victor/projects/zurich/latex/current.tex"
-endfunc
+" xdebugger
+" let g:debuggerPort=9999
 
-" Local config
+"map <Leader><F1> :python debugger_resize()<cr>
+"map <Leader><F2> :python debugger_command('step_into')<cr>
+"map <Leader><F3> :python debugger_command('step_over')<cr>
+"map <Leader><F4> :python debugger_command('step_out')<cr>
+"map <Leader><F5> :call <SID>startDebugging()<cr>
+"map <Leader><F6> :call <SID>stopDebugging()<cr>
+"map <Leader><F7> :python debugger_context()<cr>
+"map <Leader><S-F7> :python debugger_property()<cr>
+"map <F11> :python debugger_watch_input("context_get")<cr>A<cr>
+"map <F12> :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
+"nnoremap ,e :python debugger_watch_input("eval")<cr>A
+
+imap <C-o> :set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>i
+
+let g:syntastic_mode_map = { 'mode': 'active',
+         \ 'active_filetypes': ['php', 'ruby'], }
+
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+"let g:syntastic_phpmd_args = " text cleancode"
+"--standard=PSR2
+let g:syntastic_php_phpcs_args = "--standard=PSR2 -n --report=csv"
+
 if filereadable($HOME . "/.vimrc.local")
     source ~/.vimrc.local
 endif
