@@ -9,5 +9,5 @@ function! RunPhpcs()
 endfunction
 
 set errorformat+=\"%f\"\\,%l\\,%c\\,%t%*[a-zA-Z]\\,\"%m\"
-command! Phpcs execute RunPhpcs()
+command! Runphpcs execute RunPhpcs()
 
