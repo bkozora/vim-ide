@@ -67,3 +67,9 @@
 [submodule "bundle/Xdebug"]
 	path = bundle/Xdebug
 	url = git@github.com:vim-scripts/Xdebug.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = http://github.com/sjl/gundo.vim.git
+[submodule "bundle/undotree"]
+	path = bundle/undotree
+	url = https://github.com/mbbill/undotree.git
