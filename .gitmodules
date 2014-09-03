@@ -73,3 +73,6 @@
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = https://github.com/mbbill/undotree.git
+[submodule "bundle/recover"]
+	path = bundle/recover
+	url = https://github.com/chrisbra/Recover.vim.git
