@@ -14,5 +14,6 @@ git submodule update
 
 Create Symbolic Link to vim-ide so vim can find it
 ln -s ~/vim-ide ~/.vim
+ln -s ~/vim-ide/.vimrc ~/.vimrc
 
 Enjoy!
