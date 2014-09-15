@@ -48,13 +48,13 @@ else
 endif
 
 " make sure that cyrillic input is supported
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-highlight lCursor guifg=NONE guibg=#cae682
+"set keymap=russian-jcukenwin
+"set iminsert=0
+"set imsearch=0
+"highlight lCursor guifg=NONE guibg=#cae682
 
 " make sure that ZF standards for maximum line height are honoured
-" set colorcolumn=80,120
+set colorcolumn=80,120
 
 " Switch between the last two files
 nnoremap <leader><leader> <C-^>
