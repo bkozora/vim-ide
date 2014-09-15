@@ -5,7 +5,10 @@ sudo apt-get install vim-runtime vim-common vim-gui-common vim-tiny curl exubera
 
 Clone the GIT repo to your HOME directory and go there
 cd ~/
-git clone https://github.com/bkozora/vim-ide.git
+git clone https://lsfinteractive.unfuddle.com/git/lsfinteractive_vim-ide/ vim-ide
+    OR
+git clone https://github.com/bkozora/vim-ide
+
 cd vim-ide
 
 Get latest GIT Submodule dependencies
@@ -15,5 +18,7 @@ git submodule update
 Create Symbolic Link to vim-ide so vim can find it
 ln -s ~/vim-ide ~/.vim
 ln -s ~/vim-ide/.vimrc ~/.vimrc
+
+Check out the mappings files for details on mapped shortcuts. You can also run :map from inside of vim.
 
 Enjoy!
