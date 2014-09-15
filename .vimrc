@@ -281,7 +281,8 @@ let g:tex_flavor='latex'
 "
 " Tags
 "
-set tags+=$HOME/.vim/tags/python2.ctags
+"
+"set tags+=$HOME/.vim/tags/python2.ctags
 
 "
 " Plugins tuning
@@ -362,12 +363,12 @@ au FileType vim,php,c,python,html,twig,yml,xml,js,md au BufWritePre *.* :%s/\s\+
 
 
 "run file with PHP CLI (CTRL-M)
-au FileType php noremap <C-M> :w!<CR>:!php %<CR>
+"au FileType php noremap <C-M> :w!<CR>:!php %<CR>
 " " PHP parser check (CTRL-L)
 au FileType php noremap <C-L> :!php -l %<CR>
-au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python set foldmethod=indent
-au FileType python set foldnestmax=2
+"au FileType python set omnifunc=pythoncomplete#Complete
+"au FileType python set foldmethod=indent
+"au FileType python set foldnestmax=2
 augroup sh
     au!
     "smart indent really only for C like languages
@@ -443,7 +444,7 @@ endif
 au FileType php noremap <Leader>k <ESC>:!phpunit --configuration tests/phpunit.xml --group cur %<CR>
 au FileType php noremap <Leader>j <ESC>:!phpunit --configuration tests/phpunit.xml %<CR>
 au FileType php noremap <F5> <ESC>:!php -f %<CR>
-au FileType python noremap <F5> <ESC>:!python %<CR>
+"au FileType python noremap <F5> <ESC>:!python %<CR>
 au FileType sql noremap <F5> <ESC>:!mysql < %<CR>
 au FileType javascript noremap <F5> <ESC>:!js -strict -w -f %<CR>
 au FileType vim noremap <F5> <ESC>:so %<CR>
