@@ -1,0 +1,505 @@
+
+
+
+nx <C-E>       & <SNR>33_repmo('<C-E>','<C-Y>')<CR>
+	Last set from ~/vim-ide/plugin/repmo.vim
+   <NL>          5j
+	Last set from ~/.vimrc
+   <C-K>         5k
+	Last set from ~/.vimrc
+n  <C-R>       * :<C-U>call <SNR>32_wrap("\<C-R>",v:count)<CR>
+	Last set from ~/vim-ide/plugin/repeat.vim
+nx <C-Y>       & <SNR>33_repmo('<C-Y>','<C-E>')<CR>
+	Last set from ~/vim-ide/plugin/repmo.vim
+n  <Esc>p      * p'[v']=
+	Last set from ~/.vimrc
+n  <Esc>P      * P'[v']=
+	Last set from ~/.vimrc
+   <C-\>         :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+	Last set from ~/.vimrc
+n  <Space>       <PageDown>
+	Last set from ~/.vimrc
+o  %           * v:<C-U>call <SNR>27_Match_wrapper('',1,'o') <CR>
+	Last set from ~/vim-ide/plugin/matchit.vim
+v  %           * :<C-U>call <SNR>27_Match_wrapper('',1,'v') <CR>m'gv``
+	Last set from ~/vim-ide/plugin/matchit.vim
+n  %           * :<C-U>call <SNR>27_Match_wrapper('',1,'n') <CR>
+	Last set from ~/vim-ide/plugin/matchit.vim
+x  ,cu           <Plug>NERDCommenterUncomment
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  ,cb           <Plug>NERDCommenterAlignBoth
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,cb           <Plug>NERDCommenterAlignBoth
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  ,cl           <Plug>NERDCommenterAlignLeft
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,cA           <Plug>NERDCommenterAppend
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  ,cy           <Plug>NERDCommenterYank
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,cy           <Plug>NERDCommenterYank
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  ,cs           <Plug>NERDCommenterSexy
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  ,ci           <Plug>NERDCommenterInvert
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,c$           <Plug>NERDCommenterToEOL
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  ,cn           <Plug>NERDCommenterNested
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,cn           <Plug>NERDCommenterNested
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  ,cm           <Plug>NERDCommenterMinimal
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,cm           <Plug>NERDCommenterMinimal
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  ,c<Space>     <Plug>NERDCommenterToggle
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,c<Space>     <Plug>NERDCommenterToggle
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  ,cc           <Plug>NERDCommenterComment
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,b          * :CommandTBuffer<CR>
+	Last set from ~/vim-ide/bundle/command-t/plugin/command-t.vim
+n  ,t          * :CommandT<CR>
+	Last set from ~/vim-ide/bundle/command-t/plugin/command-t.vim
+v  ,e          * :python debugger_visual_eval()<CR>A
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+n  ,e          * :python debugger_watch_input("eval")<CR>A
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   ,dt           :python debugger_command('step_out')<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   ,do           :python debugger_command('step_over')<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   ,di           :python debugger_command('step_into')<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   ,dr           :python debugger_resize()<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   ,dz           :if &ft=='diff' | :set foldmethod=expr | :set foldexpr=<SNR>48_FoldDiffFile(v:lnum) | :endif<CR>
+	Last set from ~/vim-ide/plugin/view_diff.vim
+   ,dp           :call <SNR>48_FunctionWrapper('s:GetAnotherDiff', 0)<CR>
+	Last set from ~/vim-ide/plugin/view_diff.vim
+   ,dn           :call <SNR>48_FunctionWrapper('s:GetAnotherDiff', 1)<CR>
+	Last set from ~/vim-ide/plugin/view_diff.vim
+   ,dv           :call <SNR>48_FunctionWrapper('s:ViewDiffInVimDiffMode')<CR>
+	Last set from ~/vim-ide/plugin/view_diff.vim
+   ,df           :call <SNR>48_FunctionWrapper('s:GotoFileLineUnderCursor')<CR>
+	Last set from ~/vim-ide/plugin/view_diff.vim
+n  ,cv           <Plug>VCSVimDiff
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  ,cu           <Plug>NERDCommenterUncomment
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,cU           <Plug>VCSUnlock
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  ,cs           <Plug>NERDCommenterSexy
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,cr           <Plug>VCSReview
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  ,cq           <Plug>VCSRevert
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  ,cN           <Plug>VCSSplitAnnotate
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  ,cl           <Plug>NERDCommenterAlignLeft
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,cL           <Plug>VCSLock
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  ,ci           <Plug>NERDCommenterInvert
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,cg           <Plug>VCSGotoOriginal
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  ,cG           <Plug>VCSClearAndGotoOriginal
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  ,cD           <Plug>VCSDelete
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  ,cc           <Plug>NERDCommenterComment
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,ca           <Plug>NERDCommenterAltDelims
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  ,bD         * :Bclose!<CR>
+	Last set from ~/vim-ide/plugin/buffer_close.vim
+n  ,bd         * :Bclose<CR>
+	Last set from ~/vim-ide/plugin/buffer_close.vim
+n  ,bv         & :BufExplorerVerticalSplit<CR>
+	Last set from ~/vim-ide/plugin/bufexplorer.vim
+n  ,bs         & :BufExplorerHorizontalSplit<CR>
+	Last set from ~/vim-ide/plugin/bufexplorer.vim
+n  ,be         & :BufExplorer<CR>
+	Last set from ~/vim-ide/plugin/bufexplorer.vim
+n  ,x            :TagbarToggle<CR>
+	Last set from ~/.vimrc
+n  ,pep          :!pep8 %<CR>
+	Last set from ~/.vimrc
+   ,m            <Esc>:!clear && make clean && make assignment5 && ./testdominion<CR>
+	Last set from ~/.vimrc
+   ,co           <Esc>:call CompileRunGcc()<CR>
+	Last set from ~/.vimrc
+os ,cn           :cn<CR>
+	Last set from ~/.vimrc
+n  ,scc          :set scrolloff=999<CR>
+	Last set from ~/.vimrc
+n  ,sc           :set scrolloff=1<CR>
+	Last set from ~/.vimrc
+   ,inc        * <C-A>
+	Last set from ~/.vimrc
+n  ,n            :silent :nohlsearch<CR>
+	Last set from ~/.vimrc
+n  ,f            [I:let nr = input("Which one: ")|exe "normal " . nr ."[\t"<CR>
+	Last set from ~/.vimrc
+   ,diffc        :call Svndiff('clear')<CR>
+	Last set from ~/.vimrc
+   ,diff         :call Svndiff('next')<CR>
+	Last set from ~/.vimrc
+   ,w            :Bclose<CR>
+	Last set from ~/.vimrc
+   ,cd           :cd %:p:h
+	Last set from ~/.vimrc
+   ,T            :NERDTreeFind<CR>
+	Last set from ~/.vimrc
+v  ,u            <Esc><Esc>:silent !touch /tmp/uwsgi-reload.txt<CR><C-L>
+	Last set from ~/.vimrc
+no ,u            :silent !touch /tmp/uwsgi-reload.txt<CR><C-L>
+	Last set from ~/.vimrc
+v  ,s            <Esc><Esc>:w<CR>
+	Last set from ~/.vimrc
+no ,s            :w<CR>
+	Last set from ~/.vimrc
+n  ,p            :r ~/.vbuf<CR>
+	Last set from ~/.vimrc
+n  ,y            :.w! ~/.vbuf<CR>
+	Last set from ~/.vimrc
+v  ,y            :w! ~/.vbuf<CR>
+	Last set from ~/.vimrc
+   ,dup          :diffupdate<CR>
+	Last set from ~/.vimrc
+   ,gst          :Gstatus<CR>
+	Last set from ~/.vimrc
+   ,gdi          :Gdiff<CR>
+	Last set from ~/.vimrc
+v  ,l            <Esc>:BufExplorer<CR>
+	Last set from ~/.vimrc
+no ,l            :BufExplorer<CR>
+	Last set from ~/.vimrc
+n  ,todo         :vsp ~/projects.todo.txt<CR>
+	Last set from ~/.vimrc
+n  ,v            :vsp $MYVIMRC<CR>
+	Last set from ~/.vimrc
+n  ,V            :source $MYVIMRC<CR>
+	Last set from ~/.vimrc
+n  ,jek          :!jekyll build<CR>
+	Last set from ~/.vimrc
+n  ,phr          :!phr up ./src .<CR>
+	Last set from ~/.vimrc
+n  ,r            a<C-^><Esc>
+	Last set from ~/.vimrc
+n  ,cat          :!cat ~/.vbuf<CR>
+	Last set from ~/.vimrc
+   ,hh           25<C-W>|
+	Last set from ~/.vimrc
+   ,h            1<C-W>|
+	Last set from ~/.vimrc
+v  ,z            <Esc><Esc>l
+	Last set from ~/.vimrc
+n  -j          * :OScan lastdown<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -k          * :OScan lastup<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -l          * :OScan last<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -i          * :call <SNR>28_FindPatternInFile('^\s*#include')<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -n          * :OScan definition_declaration<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -u          * :OScan taglist_under_cursor<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -M          * :OScan marks global user<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -m          * :OScan marks<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -h          * :OScan changes<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -p          * :OScan paste<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -v          * :OScan vims<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -w          * :OScan windows<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -F          * :OScan files <C-R>=fnamemodify(@%, ":t:r")<CR><CR><BS>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -f          * :OScan files<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -b          * :OScan buffers<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -as         * :OScan search_in_scope<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -S          * :OScan multiline_search<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -s          * :OScan search<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -g          * :OScan file <C-R><C-W><CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -o          * :OScan file object<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -d          * :OScan file destructor<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -c          * :OScan file constructor<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  -t          * :OScan file<CR>
+	Last set from ~/vim-ide/plugin/oscan.vim
+n  .           * :<C-U>call <SNR>32_repeat(v:count)<CR>
+	Last set from ~/vim-ide/plugin/repeat.vim
+v  <           * <gv
+	Last set from ~/.vimrc
+v  >           * >gv
+	Last set from ~/.vimrc
+n  JJJJ        * <Nop>
+	Last set from ~/.vimrc
+x  S             <Plug>VSurround
+	Last set from ~/vim-ide/plugin/surround.vim
+n  U           * :<C-U>call <SNR>32_wrap('U',v:count)<CR>
+	Last set from ~/vim-ide/plugin/repeat.vim
+n  [h            <Plug>GitGutterPrevHunk
+	Last set from ~/vim-ide/bundle/vim-gitgutter/plugin/gitgutter.vim
+o  [%          * v:<C-U>call <SNR>27_MultiMatch("bW", "o") <CR>
+	Last set from ~/vim-ide/plugin/matchit.vim
+v  [%            <Esc>[%m'gv``
+	Last set from ~/vim-ide/plugin/matchit.vim
+n  [%          * :<C-U>call <SNR>27_MultiMatch("bW", "n") <CR>
+	Last set from ~/vim-ide/plugin/matchit.vim
+   [[            [c
+	Last set from ~/.vimrc
+n  \o            :NERDTreeToggle<CR>
+	Last set from ~/.vimrc
+n  \t          * :UndotreeToggle<CR>
+	Last set from ~/.vimrc
+n  \\          * <C-^>
+	Last set from ~/.vimrc
+n  ]h            <Plug>GitGutterNextHunk
+	Last set from ~/vim-ide/bundle/vim-gitgutter/plugin/gitgutter.vim
+o  ]%          * v:<C-U>call <SNR>27_MultiMatch("W",  "o") <CR>
+	Last set from ~/vim-ide/plugin/matchit.vim
+v  ]%            <Esc>]%m'gv``
+	Last set from ~/vim-ide/plugin/matchit.vim
+n  ]%          * :<C-U>call <SNR>27_MultiMatch("W",  "n") <CR>
+	Last set from ~/vim-ide/plugin/matchit.vim
+   ]]            ]c
+	Last set from ~/.vimrc
+v  a%            <Esc>[%v]%
+	Last set from ~/vim-ide/plugin/matchit.vim
+n  cs            <Plug>Csurround
+	Last set from ~/vim-ide/plugin/surround.vim
+n  ds            <Plug>Dsurround
+	Last set from ~/vim-ide/plugin/surround.vim
+n  gx            <Plug>NetrwBrowseX
+	Last set from /usr/share/vim/vim73/plugin/netrwPlugin.vim
+x  gS            <Plug>VgSurround
+	Last set from ~/vim-ide/plugin/surround.vim
+o  g%          * v:<C-U>call <SNR>27_Match_wrapper('',0,'o') <CR>
+	Last set from ~/vim-ide/plugin/matchit.vim
+v  g%          * :<C-U>call <SNR>27_Match_wrapper('',0,'v') <CR>m'gv``
+	Last set from ~/vim-ide/plugin/matchit.vim
+n  g%          * :<C-U>call <SNR>27_Match_wrapper('',0,'n') <CR>
+	Last set from ~/vim-ide/plugin/matchit.vim
+n  gf            :new %:p:h/<cfile><CR>
+	Last set from ~/.vimrc
+nx h           & <SNR>33_repmo('h','l')<CR>
+	Last set from ~/vim-ide/plugin/repmo.vim
+nx j           & <SNR>33_repmo('j','k')<CR>
+	Last set from ~/vim-ide/plugin/repmo.vim
+nx k           & <SNR>33_repmo('k','j')<CR>
+	Last set from ~/vim-ide/plugin/repmo.vim
+nx l           & <SNR>33_repmo('l','h')<CR>
+	Last set from ~/vim-ide/plugin/repmo.vim
+x  s             <Plug>Vsurround
+	Last set from ~/vim-ide/plugin/surround.vim
+   td            :tabclose<CR>
+	Last set from ~/.vimrc
+   tc            :tabnew<CR>
+	Last set from ~/.vimrc
+   tp            :tabprevious<CR>
+	Last set from ~/.vimrc
+   tn            :tabnext<CR>
+	Last set from ~/.vimrc
+n  u           * :<C-U>call <SNR>32_wrap('u',v:count)<CR>
+	Last set from ~/vim-ide/plugin/repeat.vim
+n  ySS           <Plug>YSsurround
+	Last set from ~/vim-ide/plugin/surround.vim
+n  ySs           <Plug>YSsurround
+	Last set from ~/vim-ide/plugin/surround.vim
+n  yss           <Plug>Yssurround
+	Last set from ~/vim-ide/plugin/surround.vim
+n  yS            <Plug>YSurround
+	Last set from ~/vim-ide/plugin/surround.vim
+n  ys            <Plug>Ysurround
+	Last set from ~/vim-ide/plugin/surround.vim
+nx zl          & <SNR>33_repmo('zl','zh')<CR>
+	Last set from ~/vim-ide/plugin/repmo.vim
+nx zh          & <SNR>33_repmo('zh','zl')<CR>
+	Last set from ~/vim-ide/plugin/repmo.vim
+n  <Plug>NetrwBrowseX * :call netrw#NetrwBrowseX(expand("<cWORD>"),0)<CR>
+	Last set from /usr/share/vim/vim73/plugin/netrwPlugin.vim
+n  <Plug>SIG_PrevMarkerByType * :call signature#GotoMarker("prev")<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>SIG_NextMarkerByType * :call signature#GotoMarker("next")<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>SIG_PrevLineByPos * :call signature#GotoMark("pos", "prev", "line")<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>SIG_NextLineByPos * :call signature#GotoMark("pos", "next", "line")<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>SIG_PrevSpotByPos * :call signature#GotoMark("pos", "prev", "spot")<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>SIG_NextSpotByPos * :call signature#GotoMark("pos", "next", "spot")<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>SIG_PrevLineByAlpha * :call signature#GotoMark("alpha", "prev", "line")<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>SIG_NextLineByAlpha * :call signature#GotoMark("alpha", "next", "line")<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>SIG_PrevSpotByAlpha * :call signature#GotoMark("alpha", "prev", "spot")<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>SIG_NextSpotByAlpha * :call signature#GotoMark("alpha", "next", "spot")<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>SIG_PurgeMarkers * :call signature#PurgeMarkers()<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>SIG_PurgeMarks * :call signature#PurgeMarks()<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>SIG_PlaceNextMark * :call signature#Input(",")<CR>
+	Last set from ~/vim-ide/bundle/vim-signature/autoload/signature.vim
+n  <Plug>GitGutterPrevHunk * :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
+	Last set from ~/vim-ide/bundle/vim-gitgutter/plugin/gitgutter.vim
+n  <Plug>GitGutterNextHunk * :<C-U>execute v:count1 . "GitGutterNextHunk"<CR>
+	Last set from ~/vim-ide/bundle/vim-gitgutter/plugin/gitgutter.vim
+n  <Plug>NERDCommenterAltDelims * :call <SNR>60_SwitchToAlternativeDelimiters(1)<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  <Plug>NERDCommenterUncomment * :call NERDComment("x", "Uncomment")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>NERDCommenterUncomment * :call NERDComment("n", "Uncomment")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  <Plug>NERDCommenterAlignBoth * :call NERDComment("x", "AlignBoth")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>NERDCommenterAlignBoth * :call NERDComment("n", "AlignBoth")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  <Plug>NERDCommenterAlignLeft * :call NERDComment("x", "AlignLeft")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>NERDCommenterAlignLeft * :call NERDComment("n", "AlignLeft")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>NERDCommenterAppend * :call NERDComment("n", "Append")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  <Plug>NERDCommenterYank * :call NERDComment("x", "Yank")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>NERDCommenterYank * :call NERDComment("n", "Yank")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  <Plug>NERDCommenterSexy * :call NERDComment("x", "Sexy")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>NERDCommenterSexy * :call NERDComment("n", "Sexy")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  <Plug>NERDCommenterInvert * :call NERDComment("x", "Invert")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>NERDCommenterInvert * :call NERDComment("n", "Invert")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>NERDCommenterToEOL * :call NERDComment("n", "ToEOL")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  <Plug>NERDCommenterNested * :call NERDComment("x", "Nested")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>NERDCommenterNested * :call NERDComment("n", "Nested")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  <Plug>NERDCommenterMinimal * :call NERDComment("x", "Minimal")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>NERDCommenterMinimal * :call NERDComment("n", "Minimal")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  <Plug>NERDCommenterToggle * :call NERDComment("x", "Toggle")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>NERDCommenterToggle * :call NERDComment("n", "Toggle")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+x  <Plug>NERDCommenterComment * :call NERDComment("x", "Comment")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>NERDCommenterComment * :call NERDComment("n", "Comment")<CR>
+	Last set from ~/vim-ide/bundle/nerdcommenter/plugin/NERD_commenter.vim
+n  <Plug>(godoc-keyword) * :<C-U>call <SNR>57_Godoc('')<CR>
+	Last set from ~/vim-ide/bundle/gocode/plugin/godoc.vim
+   <F9>          :python debugger_command('step_out')<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   <F5>          :python debugger_run()<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   <F3>          :python debugger_command('step_over')<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   <F2>          :python debugger_command('step_into')<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   <F1>          :python debugger_mark()<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+n  <Plug>VCSVimDiff * :VCSVimDiff<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSUpdate * :VCSUpdate<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSUnlock * :VCSUnlock<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSStatus * :VCSStatus<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSSplitAnnotate * :VCSAnnotate!<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSReview * :VCSReview<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSRevert * :VCSRevert<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSLog * :VCSLog<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSLock * :VCSLock<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSInfo * :VCSInfo<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSClearAndGotoOriginal * :VCSGotoOriginal!<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSGotoOriginal * :VCSGotoOriginal<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSDiff * :VCSDiff<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSDelete * :VCSDelete<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSCommit * :VCSCommit<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSAnnotate * :VCSAnnotate<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+n  <Plug>VCSAdd * :VCSAdd<CR>
+	Last set from ~/vim-ide/plugin/vcscommand.vim
+v  <Plug>VgSurround * :<C-U>call <SNR>36_opfunc(visualmode(),visualmode() ==# 'V' ? 0 : 1)<CR>
+	Last set from ~/vim-ide/plugin/surround.vim
+v  <Plug>VSurround * :<C-U>call <SNR>36_opfunc(visualmode(),visualmode() ==# 'V' ? 1 : 0)<CR>
+	Last set from ~/vim-ide/plugin/surround.vim
+v  <Plug>Vsurround * :<C-U>call <SNR>36_opfunc(visualmode())<CR>
+	Last set from ~/vim-ide/plugin/surround.vim
+n  <Plug>YSurround * :<C-U>set opfunc=<SNR>36_opfunc2<CR>g@
+	Last set from ~/vim-ide/plugin/surround.vim
+n  <Plug>Ysurround * :<C-U>set opfunc=<SNR>36_opfunc<CR>g@
+	Last set from ~/vim-ide/plugin/surround.vim
+n  <Plug>YSsurround * :<C-U>call <SNR>36_opfunc2(v:count1)<CR>
+	Last set from ~/vim-ide/plugin/surround.vim
+n  <Plug>Yssurround * :<C-U>call <SNR>36_opfunc(v:count1)<CR>
+	Last set from ~/vim-ide/plugin/surround.vim
+n  <Plug>Csurround * :<C-U>call <SNR>36_changesurround()<CR>
+	Last set from ~/vim-ide/plugin/surround.vim
+n  <Plug>Dsurround * :<C-U>call <SNR>36_dosurround(<SNR>36_inputtarget())<CR>
+	Last set from ~/vim-ide/plugin/surround.vim
+   <SNR>33_cnt<Space> * <SNR>33_Count("get")
+	Last set from ~/vim-ide/plugin/repmo.vim
+v  <SNR>33_lastkey * :<C-U>call<SNR>33_MapRepMo(1)<CR>
+	Last set from ~/vim-ide/plugin/repmo.vim
+n  <SNR>33_lastkey * :<C-U>call<SNR>33_MapRepMo(0)<CR>
+	Last set from ~/vim-ide/plugin/repmo.vim
+v  <SNR>33_repmo( * :<C-U>call<SNR>33_MapRepeatMotion(1,
+	Last set from ~/vim-ide/plugin/repmo.vim
+n  <SNR>33_repmo( * :<C-U>call<SNR>33_MapRepeatMotion(0,
+	Last set from ~/vim-ide/plugin/repmo.vim
+n  <Plug>ToggleProject & :call <SNR>30_DoToggleProject()<CR>
+	Last set from ~/vim-ide/plugin/project.vim
+   <F8>          :python debugger_command('step_over')<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   <F6>          :python debugger_quit()<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   <F12>         :python debugger_property()<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   <F11>         :python debugger_context()<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   <F10>         :python debugger_globals()<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   <F7>          :python debugger_command('step_into')<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
+   <F4>          :python debugger_command('step_out')<CR>
+	Last set from ~/vim-ide/bundle/Xdebug/plugin/debugger.vim
