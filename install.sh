@@ -36,12 +36,11 @@ if [ -d ~/vim-ide ]
         # Symlink to our new vim configuration
         ln -s ~/vim-ide/.vimrc ~/.vimrc
         ln -s ~/vim-ide ~/.vim
-        echo "\nCreated symlinks to point Vim to our new kickass environment..."
+        printf "\nCreated symlinks to point Vim to our new kickass environment..."
 
         # Create file for local customizations
         touch ~/.vimrc.local
-        printf "\nCreated ~/.vimrc.local Place any customizations in there to override the default configurations set
-        up\n\n"
+        printf "\nCreated ~/.vimrc.local Place any customizations there to override the default configuration\n"
 
 fi
 
