@@ -1,6 +1,11 @@
 How to Install VIM-IDE in simple steps
 
 Install VIM and Dependencies
+
+Most Importantly, CTags
+sudo apt-get update && sudo apt-get install exhuberant-ctags
+
+Or on new systems install Vim too
 sudo apt-get install vim-runtime vim-common vim-gui-common vim-tiny curl exuberant-ctags
 
 Clone the GIT repo to your HOME directory and go there
@@ -9,7 +14,13 @@ git clone https://lsfinteractive.unfuddle.com/git/lsfinteractive_vim-ide/ vim-id
     OR
 git clone https://github.com/bkozora/vim-ide
 
+I've created a shell script to ease setup of new environments. So once it's cloned,
+simply cd into the new directory and execute
+
 cd vim-ide
+./install.sh
+
+That should handle it all for you, if not, here are the manual steps:
 
 Get latest GIT Submodule dependencies
 git submodule init
@@ -18,7 +29,18 @@ git submodule update
 Create Symbolic Link to vim-ide so vim can find it
 ln -s ~/vim-ide ~/.vim
 ln -s ~/vim-ide/.vimrc ~/.vimrc
+touch ~/.vimrc.local
 
-Check out the mappings files for details on mapped shortcuts. You can also run :map from inside of vim.
+The .vimrc.local file allows you to override configurations within my environment
+that you absolutely hate. For some strange reason you despise line numbers? Simply
+define 
+
+set nonumber
+
+in your ~/.vimrc.local file.
+
+Check out the mappings files for details on mapped shortcuts. You can also run
+:map from inside of vim to find more custom keymaps I've exposed. All default Vim
+functionality should be left intact.
 
 Enjoy!
