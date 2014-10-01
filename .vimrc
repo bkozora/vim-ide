@@ -29,7 +29,8 @@ autocmd!
 
 " Load pathogen
 execute pathogen#infect()
-
+" Generate our helptags
+Helptags
 
 " Enable loading filetype and indentation plugins
 filetype plugin indent on
@@ -46,6 +47,35 @@ else
     set background=dark
     colorscheme wombat
 endif
+
+" vim-airline status bar customizations
+" let g:airline_powerline_fonts = 1
+let g:bufferline_echo = 0
+
+" Always show status line
+set laststatus=2
+" Show Git Branch info
+let g:airline#extensions#hunks#enabled=1
+
+" Automatically displays all buffers when there's only one tab open
+let g:airline#extensions#tabline#enabled = 1
+
+" Set our theme
+let g:airline_theme = 'airlineish'
+
+"let g:airline_section_b       (branch)
+"let g:airline_section_c       (bufferline or filename)
+"let g:airline_section_gutter  (readonly, csv)
+"let g:airline_section_x       (tagbar, filetype, virtualenv)
+let g:airline_section_y = ''
+"let g:airline_section_z       (percentage, line number, column number)
+"let g:airline_section_warning (syntastic, whitespace)
+
+" here is an example of how you could replace the branch indicator with
+" the current working directory, followed by the filename.
+"let g:airline_section_b = '%{getcwd()}'
+"let g:airline_section_c = '%t'
+
 
 " make sure that cyrillic input is supported
 "set keymap=russian-jcukenwin
