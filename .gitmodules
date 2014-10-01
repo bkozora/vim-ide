@@ -66,4 +66,10 @@
 	url = https://github.com/mbbill/undotree.git
 [submodule "bundle/recover"]
 	path = bundle/recover
-	url = https://github.com/chrisbra/Recover.vim.git
+	url = https://github.com/chrisbra/Recover.vim.gitsubmodule "bundle/recover"]
+[submodule "bundle/vim-airline"]
+    path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "bundle/vim-airlineish"]
+    path = bundle/vim-airlineish
+	url = https://github.com/paranoida/vim-airlineish.git
