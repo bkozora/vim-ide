@@ -61,7 +61,7 @@ let g:airline#extensions#hunks#enabled=1
 let g:airline#extensions#tabline#enabled = 1
 
 " Set our theme
-let g:airline_theme = 'airlineish'
+" let g:airline_theme = 'airlineish'
 
 "let g:airline_section_b       (branch)
 "let g:airline_section_c       (bufferline or filename)
