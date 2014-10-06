@@ -27,6 +27,18 @@
 " Purge previous auto commands (in case vimrc is run twice)
 autocmd!
 
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = ['vim-pastie', 'vim-signature', 'Vundle.vim', 'webapi-vim']
+
+" Gundo requires at least vim 7.3
+if v:version < '703' || !has('python')
+    call add(g:pathogen_disabled, 'gundo')
+endif
+
+if v:version < '702'
+    call add(g:pathogen_disabled, 'fuzzyfinder')
+endif
+
 " Load pathogen
 execute pathogen#infect()
 " Generate our helptags
