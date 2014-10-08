@@ -28,7 +28,10 @@
 autocmd!
 
 " To disable a plugin, add it's bundle name to the following list
-let g:pathogen_disabled = ['vim-pastie', 'vim-signature', 'Vundle.vim', 'webapi-vim']
+let g:pathogen_disabled = ['ack', 'simpledb', 'vim-pastie', 'vim-signature', 'Vundle.vim', 'webapi-vim']
+
+" Generate our help files for all bundles
+call pathogen#helptags()
 
 " Gundo requires at least vim 7.3
 if v:version < '703' || !has('python')
@@ -41,8 +44,6 @@ endif
 
 " Load pathogen
 execute pathogen#infect()
-" Generate our helptags
-Helptags
 
 " Enable loading filetype and indentation plugins
 filetype plugin indent on
