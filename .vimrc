@@ -51,6 +51,9 @@ filetype plugin indent on
 " Turn syntax highlighting on
 syntax on
 
+" turn off code folding
+set nofoldenable
+
 " default color scheme (based on wombat)
 if has("gui_macvim")
     set guifont=Menlo:h14
