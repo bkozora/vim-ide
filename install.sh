@@ -1,11 +1,20 @@
 #!/bin/bash
 
-# Rename our ugly default unfuddle directory
-if [ -d ~/lsfinteractive_vim-ide ]
+##
+#  Let's create a kickass vim environment
+#
+#  @author Robert Kozora <bobby@kozora.me>
+##
+
+# start fresh
+cd ~/
+
+# see if we have already cloned vim-ide
+if [ ! -d ~/vim-ide ]
     then
-        echo "Moving ~/lsfinteractive_vim-ide to ~/vim-ide..."
-        cd ~/
-        mv ~/lsfinteractive_vim-ide ~/vim-ide
+    # Clone my repo
+    git clone https://github.com/bkozora/vim-ide.git ~/vim-ide
+    printf "Cloned Bobby\'s kickass Vim configuration\n"
 fi
 
 if [ -d ~/vim-ide ]
@@ -22,14 +31,14 @@ if [ -d ~/vim-ide ]
         if [ -f ~/.vimrc ]
         then
             # Backup our .vimrc
-            echo "Backed up your existing ~/.vimrc to ~/.vimrc-old"
+            echo "Backed up your existing ~/.vimrc to ~/.vimrc-old \n"
             mv ~/.vimrc ~/.vimrc-old
         fi
 
         if [ -d ~/.vim ]
         then
             # Backup our old .vim directory
-            echo "Backed up your existing ~/.vim directory to ~/.vim-old"
+            echo "Backed up your existing ~/.vim directory to ~/.vim-old \n"
             mv ~/.vim ~/.vim-old
         fi
 
@@ -41,6 +50,9 @@ if [ -d ~/vim-ide ]
         # Create file for local customizations
         touch ~/.vimrc.local
         printf "\nCreated ~/.vimrc.local Place any customizations there to override the default configuration\n"
-
 fi
+
+printf "You should be all set! \n  - If you wanna tweak it, use ~/.vimrc.local   - If you ABSOLUTELY hate it, break the
+symlinks to ~/.vim and ~/.vimrc"
+
 
