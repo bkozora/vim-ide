@@ -10,8 +10,6 @@ sudo apt-get install vim-runtime vim-common vim-gui-common vim-tiny curl exubera
 
 Clone the GIT repo to your HOME directory and go there
 cd ~/
-git clone https://lsfinteractive.unfuddle.com/git/lsfinteractive_vim-ide/ vim-ide
-    OR
 git clone https://github.com/bkozora/vim-ide
 
 I've created a shell script to ease setup of new environments. So once it's cloned,
