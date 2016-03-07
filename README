@@ -1,51 +1,52 @@
-How to Install VIM-IDE in simple steps
+# How to Install VIM-IDE #
 
-Install VIM and Dependencies
+- Install VIM and Dependencies (Most Importantly, CTags)
+   ```sh
+    sudo apt-get update && sudo apt-get install exhuberant-ctags
+   ```
 
-Most Importantly, CTags
-sudo apt-get update && sudo apt-get install exhuberant-ctags
+- On new systems install Vim too
+   ```sh
+   sudo apt-get install vim-runtime vim-common vim-gui-common vim-tiny curl exuberant-ctags
+   ```
 
-Or on new systems install Vim too
-sudo apt-get install vim-runtime vim-common vim-gui-common vim-tiny curl exuberant-ctags
-
-Clone the GIT repo to your HOME directory and go there
-cd ~/
-git clone https://github.com/bkozora/vim-ide
+- Clone the GIT repo to your HOME directory and go there
+   ```sh
+    cd ~/
+    git clone https://github.com/bkozora/vim-ide
+    ```
 
 I've created a shell script to ease setup of new environments. So once it's cloned,
 simply cd into the new directory and execute
 
+```sh
 cd vim-ide
 ./install.sh
+```
 
 That should handle it all for you, if not, here are the manual steps:
 
-Get latest GIT Submodule dependencies
-git submodule init
-git submodule update
-
-Create Symbolic Link to vim-ide so vim can find it
-ln -s ~/vim-ide ~/.vim
-ln -s ~/vim-ide/.vimrc ~/.vimrc
-touch ~/.vimrc.local
+- Get latest GIT Submodule dependencies
+  - ```git submodule init```
+  - ```git submodule update```
+- Create Symbolic Link to vim-ide so vim can find it
+  - ```ln -s ~/vim-ide ~/.vim```
+  - ```ln -s ~/vim-ide/.vimrc ~/.vimrc```
+  - ```touch ~/.vimrc.local```
 
 The .vimrc.local file allows you to override configurations within my environment
-that you absolutely hate. For some strange reason you despise line numbers? Simply
-define:
-
-set nonumber
-
-in your ~/.vimrc.local file.
+that you absolutely hate. If for some strange reason you despise line numbers? Simply
+define: ```set nonumber``` in your ~/.vimrc.local file.
 
 Check out the mappings files for details on mapped shortcuts. You can also run
-:map from inside of vim to find more custom keymaps I've exposed. All default Vim
+```:map``` from inside of vim to find more custom keymaps I've exposed. All default Vim
 functionality should be left intact.
 
 There are many color schemes included in the bundle. I've included a plugin to
-make scrolling through them all easy. Simply press escape then type :SCROLL then
+make scrolling through them all easy. Simply press escape then type ```:SCROLL``` then
 use the arrow keys to cycle through all of the themes. Once you find one you like
-you can add it to your ~/.vimrc.local file like so:
+you can add it to your ```~/.vimrc.local``` file like so:
 
-colorscheme NameOfScheme
+```colorscheme NameOfScheme```
 
 Enjoy!
