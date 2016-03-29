@@ -56,6 +56,6 @@ if [ -d ~/vim-ide ]
 fi
 
 printf "You should be all set! \n  - If you wanna tweak it, use ~/.vimrc.local   - If you ABSOLUTELY hate it, break the
-symlinks to ~/.vim and ~/.vimrc"
+symlinks to ~/.vim and ~/.vimrc \n\n"
 
 
