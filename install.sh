@@ -6,6 +6,9 @@
 #  @author Robert Kozora <bobby@kozora.me>
 ##
 
+# Make sure we use bash or else our plugins start whining... Fish is better though!
+set shell=/bin/bash
+
 # start fresh
 cd ~/
 
