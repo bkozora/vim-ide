@@ -27,6 +27,9 @@
 " Purge previous auto commands (in case vimrc is run twice)
 autocmd!
 
+" I love fish shell but vim doesn't... let's set shell to bash so things play nice.
+set shell=/bin/bash
+
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = ['ack', 'simpledb', 'vim-pastie', 'vim-signature', 'Vundle.vim', 'webapi-vim']
 
