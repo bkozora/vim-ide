@@ -61,7 +61,8 @@ if has("gui_macvim")
     colorscheme solarized
 else
     set background=dark
-    colorscheme wombat
+    colorscheme wombat256
+    " colorscheme gotham
 endif
 
 " vim-airline status bar customizations
