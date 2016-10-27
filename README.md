@@ -36,5 +36,6 @@ make scrolling through them all easy. Simply press escape then type ```:SCROLL``
 
 ```colorscheme NameOfScheme```
 
-Enjoy!
-Bobby Kozora
+#### Enjoy!
+
+###### Bobby Kozora
