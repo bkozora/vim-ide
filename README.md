@@ -29,16 +29,10 @@ The .vimrc.local file allows you to override configurations within the environme
 that you absolutely hate. If for some strange reason you despise line numbers, simply
 define: ```set nonumber``` in your ~/.vimrc.local file.
 
-Check out the mappings files for details on mapped shortcuts. You can also run
-```:map``` 
- from inside of vim to find more custom keymaps I've exposed. All default Vim
-functionality should be left intact.
+Check out the mappings files for details on mapped shortcuts. You can also run ```:map``` from inside of vim to find more custom keymaps I've exposed. All default Vim functionality should be left intact.
 
 There are many color schemes included in the bundle. I've included a plugin to
-make scrolling through them all easy. Simply press escape then type 
-```:SCROLL``` 
-then use the arrow keys to cycle through all of the themes. Once you find one you like
-you can add it to your ```~/.vimrc.local``` file like so:
+make scrolling through them all easy. Simply press escape then type ```:SCROLL``` then use the arrow keys to cycle through all of the themes. Once you find one you like you can add it to your ```~/.vimrc.local``` file like so:
 
 ```colorscheme NameOfScheme```
 
