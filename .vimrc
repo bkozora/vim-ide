@@ -78,9 +78,9 @@ let g:airline#extensions#hunks#enabled=1
 let g:airline#extensions#tabline#enabled = 1
 
 " Set our theme
-" let g:airline_theme = 'airlineish'
+let g:airline_theme = 'airlineish'
 
-"let g:airline_section_b       (branch)
+"let g:airline_section_b   =    branch
 "let g:airline_section_c       (bufferline or filename)
 "let g:airline_section_gutter  (readonly, csv)
 "let g:airline_section_x       (tagbar, filetype, virtualenv)
@@ -90,9 +90,15 @@ let g:airline_section_y = ''
 
 " here is an example of how you could replace the branch indicator with
 " the current working directory, followed by the filename.
-"let g:airline_section_b = '%{getcwd()}'
+let g:airline_section_b = '%{getcwd()}'
 "let g:airline_section_c = '%t'
 
+" PHP Complete options
+
+" When enabled the preview window's content will include information extracted from docblock comments of the completions.
+" Enabling this option will add return types to the completion menu for functions too.
+
+let g:phpcomplete_parse_docblock_comments=1
 
 " make sure that cyrillic input is supported
 "set keymap=russian-jcukenwin
@@ -152,6 +158,10 @@ set t_Co=256
 
 set mouse=a
 
+"nnoremap <Leader>dos :call Convert2Dos()
+"nnoremap <Leader>unix :call Convert2Unix()
+
+
 "nnoremap <F1> :call ToggleMouse()
 function! ToggleMouse()
     if &mouse == 'a'
@@ -163,6 +173,21 @@ function! ToggleMouse()
         set number
         echo "Mouse usage enabled"
     endif
+endfunction
+
+" function to convert to unix line endings
+function! Convert2Unix()
+    set ff=unix
+"    :%s/<Ctrl-V><Ctrl-M>/\r/g
+"    "write
+    echo "File converted to UNIX line endings"
+endfunction
+
+" function to convert to unix line endings
+function! Convert2Dos()
+    set ff=dos
+    "write
+    echo "File converted to DOS line endings"
 endfunction
 
 " GLOBAL SETTINGS
@@ -217,7 +242,6 @@ set laststatus=2
 " Jump to matching bracket for 2/10th of a second (works with showmatch)
 set matchtime=2
 
-
 " Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
 set nrformats=octal,hex,alpha
 
@@ -226,7 +250,6 @@ set nrformats=octal,hex,alpha
 nnoremap <F4> :set invpaste paste?<CR>
 set pastetoggle=<F4>
 set showmode
-
 
 " Show line, column number, and relative position within a file in the status line
 set ruler
@@ -339,7 +362,7 @@ let g:tex_flavor='latex'
 let NERDTreeDirArrows=1
 let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['\.o$', '\.pyc$', '\.php\~$']
-let NERDTreeWinSize = 35
+let NERDTreeWinSize = 45
 " Make sure that when NT root is changed, Vim's pwd is also updated
 let NERDTreeChDirMode = 2
 let NERDTreeShowLineNumbers = 1
@@ -410,7 +433,7 @@ au FileType vim,php,c,python,html,twig,yml,xml,js,md au BufWritePre *.* :%s/\s\+
 
 
 "run file with PHP CLI (CTRL-M)
-"au FileType php noremap <C-M> :w!<CR>:!php %<CR>
+au FileType php noremap <C-M> :w!<CR>:!php %<CR>
 " " PHP parser check (CTRL-L)
 au FileType php noremap <C-L> :!php -l %<CR>
 "au FileType python set omnifunc=pythoncomplete#Complete
