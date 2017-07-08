@@ -2,7 +2,7 @@
 
 1. Make sure Vim and dependencies (most importantly ctags) are installed
    ```sh
-   sudo apt-get update && apt-get install vim-runtime vim-common vim-gui-common vim-tiny curl exuberant-ctags
+   sudo apt-get update && apt-get install vim-runtime vim-common curl exuberant-ctags
    ```
 2. Clone the GIT repo to your HOME directory (or /etc/skel to have it created for new system users too) and cd into it
    ```sh
